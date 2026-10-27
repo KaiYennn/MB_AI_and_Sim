@@ -32,6 +32,7 @@ This repository shows the two projects I developed during my internship in Merce
   - [Digital Twin Pipeline & Domain Randomization](#digital-twin-pipeline--domain-randomization)
   - [Model Training & Evaluation](#model-training--evaluation)
   - [Edge-Case Handling & Production Deployment](#edge-case-handling--production-deployment)
+  - [Changing UR10 joint positions for inspection of different switches](#changing-ur10-joint-positions-for-inspection-of-different-switches)
 - [Key Engineering Takeaways & Lessons Learned](#key-engineering-takeaways--lessons-learned)
 
 ---
@@ -129,6 +130,7 @@ The object detection and classification model was trained and evaluated directly
   - **Recall:** $\approx 99\%$
   - **Loss:** Demonstrated steady, consistent convergence across training and validation splits.
 
+
 ### Edge-Case Handling & Production Deployment
 
 #### The "Semi-Inserted" Ambiguity (*Grenzfall*)
@@ -140,8 +142,13 @@ A major challenge on the line occurs when a connector is partially plugged in. I
 
 ---
 
+### Changing UR10 joint positions for inspection of different switches
+As the UR10 in the factory had to inspect multiple switches on the car part, the UR10 inside the digital twin also had to be moved according to the real UR10 in the factory. Therefore, URSim was also used in manipulating the UR10 and the End-Effector  
+
+
 ## Key Engineering Takeaways & Lessons Learned
 
 1. **Constant communication with Plant Engineers:** Continuous alignment with supervisors and machine vision technicians on the shop floor prevented miscommunication regarding region-of-interest (ROI) definitions, connector tolerances, and camera mounting constraints.
 2. **Sim-to-Real Feasibility:** Domain randomization across illumination, harness deflection, and fine mechanical positioning allows purely synthetic data to generalize effectively to physical production vision stations.
-3. **Always add a time buffer:** It is common something goes wrong in any given project. Therefore, always plan for extra flexibilisation and time. 
+3. **Always add a time buffer:** It is common something goes wrong in any given project. Therefore, always plan for extra flexibilisation and time.
+
